@@ -1,10 +1,3 @@
-Edo & Marghe — Our Little Universe
-Edizione illustrata Chibi Cozy (web app)
-
-Carica TUTTI i file di questa cartella nella radice del repository GitHub Pages, incluso avatars.js.
-In particolare, non caricare solo lo ZIP o soltanto index.html.
-Se vedi la grafica precedente: verifica che il commit sia completo, attendi la pubblicazione Pages e ricarica Safari.
-
-Le ambientazioni sono modelli 3D procedurali dettagliati, non modelli cinematografici fotorealistici.
-Il livello Molentargius include un cavallo grigio e uno baio.
-Il salvataggio locale resta legato al dominio del sito.
+Edo & Marghe — correzione Molentargius e Ein Prosit.
+Cavalli grigio e baio riposizionati nella parte visibile del percorso. Franci usa ora il modello femminile chibi, con capelli lunghi e videocamera.
+Carica tutti i file nella radice del repository GitHub Pages e sostituisci quelli omonimi.

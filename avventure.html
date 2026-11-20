@@ -18,7 +18,7 @@ function mesh(shape,m,x,y,z,group=scene){const o=new THREE.Mesh(shape,typeof m==
 function box(x,y,z,w,h,d,m,g){return mesh(new THREE.BoxGeometry(w,h,d),m,x,y,z,g)}
 function ball(x,y,z,r,m,g){return mesh(new THREE.SphereGeometry(r,14,10),m,x,y,z,g)}
 function cylinder(x,y,z,r,h,m,g){return mesh(new THREE.CylinderGeometry(r,r,h,12),m,x,y,z,g)}
-function character(x,z,shirt,hair='#44302e'){const isMarghe=hair==='#674431'||hair==='#49332d';const g=makeAvatar(THREE,isMarghe?'marghe':'edo',shirt.color?('#'+shirt.color.getHexString()):'#7790aa');g.position.set(x,0,z);scene.add(g);return g}
+function character(x,z,shirt,hair='#44302e',kindOverride=null){const isMarghe=kindOverride?kindOverride==='marghe':(hair==='#674431'||hair==='#49332d');const g=makeAvatar(THREE,isMarghe?'marghe':'edo',shirt.color?('#'+shirt.color.getHexString()):'#7790aa');g.position.set(x,0,z);scene.add(g);return g}
 let edo=character(-4,3,materials.blue),marghe=character(2,-1,materials.pink,'#674431');let avatarLast=edo.position.clone();
 const floor=box(0,-.18,0,18,.32,13,materials.cream);let decor=[];
 function clearDecor(){for(const o of decor)scene.remove(o);decor=[];targets=[]}
@@ -318,21 +318,21 @@ if(type==='horse'){
     for(const side of [-1,1]){hs(1.03,1.83,side*.235,.055,hoof);hb(.96,1.66,side*.22,.055,.30,.045,mm)}
     g.position.set(x,0,z);add(g);return g;
   }
-  makeHorse(-2.6,1.1,'#c7cbd0','#858b94','#856b77');
-  makeHorse(3.6,1.0,'#8b4c30','#342a29','#b58b6d');
+  makeHorse(-2.0,-1.7,'#c7cbd0','#858b94','#856b77');
+  makeHorse(4.2,-1.8,'#8b4c30','#342a29','#b58b6d');
   detailBox(.6,.55,2.6,3.8,1.1,.18,'#e5c7a3');detailBox(.6,.13,2.6,.15,.6,.15,'#8c6c52');
 }
 // Ein Prosit: distinguishable 3D guests, discover identities by approaching them.
 if(type==='find'){
   let foundNames=new Set();
   const guests=[
-    {name:'Franci',x:-5,z:0,shirt:'#8b658f',hair:'#4c3027',prop:'camera'},
+    {name:'Franci',x:-5,z:0,shirt:'#b77c9d',hair:'#dca75d',prop:'camera',kind:'marghe'},
     {name:'Gian',x:4,z:1.7,shirt:'#608c71',hair:'#49372c',prop:'sandwich'},
     {name:'Ospite',x:-1.5,z:-2.5,shirt:'#b87972',hair:'#382b29',prop:'cup'},
     {name:'Ospite',x:5.8,z:-2.5,shirt:'#6389a9',hair:'#35292d',prop:'cup'}
   ];
   for(const [i,g] of guests.entries()){
-    const npc=character(g.x,g.z,mat(g.shirt),g.hair);decor.push(npc);
+    const npc=character(g.x,g.z,mat(g.shirt),g.hair,g.kind||'edo');decor.push(npc);
     // Props are attached to the character so they remain recognizable in the 3D scene.
     if(g.prop==='camera'){
       box(.49,1.02,.23,.37,.28,.23,materials.dark,npc);
