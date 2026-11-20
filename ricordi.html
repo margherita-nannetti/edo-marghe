@@ -1,1 +1,53 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#4a3045"><title>Album dei ricordi — Edo & Marghe</title><style>*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff3e6,#f4d8e5);font:15px system-ui;color:#493447;padding:24px 17px 60px}main{max-width:660px;margin:auto}h1{font:36px Georgia,serif;margin:12px 0 6px}p{line-height:1.6}a{text-decoration:none;color:inherit}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.nav a{background:#8c5878;color:white;padding:11px 15px;border-radius:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{background:#fff9f1;border:1px solid white;border-radius:18px;padding:17px;box-shadow:0 5px 18px #6d456522;display:block}.card strong{display:block;margin-bottom:7px}.card small{color:#886b79}.tag{float:right;color:#ac5880}.hero{height:185px;background:url('copertina.jpg') center 33%/cover;border-radius:20px}body{background:linear-gradient(145deg,#1d1826dc,#4a3041cf),url("copertina.jpg") center/cover fixed!important}article,.card{backdrop-filter:blur(10px)}</style></head><body><main><div class="hero"></div><h1>Il nostro universo 💗</h1><p>Ogni ricordo è un piccolo pezzo della nostra storia. Tocca un capitolo per riviverlo.</p><div class="nav"><a href="index.html">🏠 Inizio</a><a href="avventure.html">🗺️ Avventure</a></div><div class="grid" id="grid"></div><p>20 novembre 2026 · Per Edoardo, con amore.</p></main><script>const names=['🎓 Il libro di Kahneman','💋 Il primo bacio','🐈 Lubiana: There are cats?','🏰 Il capanno di Bled','🎸 Is Arutas al tramonto','🏄 Imparare a surfare','⛷️ Imparare a sciare','🍽️ Il nostro primo stellato','🇬🇧 Londra sotto il sole','🎁 Mystery box','🐎 A cavallo a Molentargius','🥊 Muay thai','🐈 Le coccole con Nenno','🔎 Ein Prosit: Franci e Gian','🗝️ Il forziere dei ricordi'];let saved={};try{saved=JSON.parse(localStorage.getItem('edo-marghe-progress-v5')||'{}')}catch(e){};const grid=document.getElementById('grid');names.forEach((n,i)=>{const a=document.createElement('a');a.className='card';a.href=i===0?'index.html':i===1?'bacio.html':'avventure.html?level='+(i-2);const done=i===0?localStorage.getItem('edo-marghe-ch1'):i===1?localStorage.getItem('edo-marghe-ch2'):saved[i-2];a.innerHTML='<span class="tag">'+(done?'✓':'♡')+'</span><strong>'+(i+1)+'. '+n+'</strong><small>'+(done?'Ricordo conservato':'Da scoprire')+'</small>';grid.append(a)})</script></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4a3045">
+  <title>Album dei ricordi — Edo &amp; Marghe</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;padding:24px 17px 60px;background:linear-gradient(145deg,#1d1826dc,#4a3041cf),url("copertina.jpg") center/cover fixed;font:15px system-ui;color:#493447}
+    main{max-width:660px;margin:auto;padding:18px;border-radius:24px;background:#fff3e6e8;backdrop-filter:blur(10px)}
+    h1{font:36px Georgia,serif;margin:12px 0 6px}
+    p{line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+    .nav a{padding:11px 15px;border-radius:13px;background:#8c5878;color:white}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{display:block;padding:17px;border:1px solid white;border-radius:18px;background:#fff9f1;box-shadow:0 5px 18px #6d456522}
+    .card strong{display:block;margin-bottom:7px}.card small{color:#886b79}.tag{float:right;color:#ac5880}
+    .hero{height:185px;border-radius:20px;background:url('copertina.jpg') center 33%/cover}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero"></div>
+    <h1>Il nostro universo 💗</h1>
+    <p>Ogni ricordo è un piccolo pezzo della nostra storia. Tocca un capitolo per riviverlo.</p>
+    <div class="nav"><a href="index.html">🏠 Inizio</a><a href="avventure.html">🗺️ Avventure</a></div>
+    <div class="grid" id="grid"></div>
+    <p>20 novembre 2026 · Per Edoardo, con amore.</p>
+  </main>
+  <script>
+    const names=[
+      '🎓 Il libro di Kahneman','💋 Il primo bacio','🐈 Lubiana: There are cats?',
+      '🏰 Il capanno di Bled','🎸 Is Arutas al tramonto','🏄 Edo insegna il surf a Marghe',
+      '⛷️ L’outfit perfetto per sciare','🍽️ Il nostro primo stellato','🇬🇧 Londra sotto il sole',
+      '🎁 Mystery box','🐎 A cavallo a Molentargius','🥊 Muay thai','🐈 Le coccole con Nenno',
+      '🔎 Ein Prosit: Franci e Gian','🗝️ Il forziere dei ricordi'
+    ];
+    let saved={};
+    try{saved=JSON.parse(localStorage.getItem('edo-marghe-progress-v5')||'{}')}catch(_error){saved={}}
+    const grid=document.getElementById('grid');
+    names.forEach((name,index)=>{
+      const link=document.createElement('a');
+      link.className='card';
+      link.href=index===0?'index.html':index===1?'bacio.html':'avventure.html?level='+(index-2);
+      const complete=index===0?localStorage.getItem('edo-marghe-ch1'):index===1?localStorage.getItem('edo-marghe-ch2'):saved[index-2];
+      link.innerHTML='<span class="tag">'+(complete?'✓':'♡')+'</span><strong>'+(index+1)+'. '+name+'</strong><small>'+(complete?'Ricordo conservato':'Da scoprire')+'</small>';
+      grid.append(link);
+    });
+  </script>
+</body>
+</html>
