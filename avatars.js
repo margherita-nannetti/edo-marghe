@@ -16,9 +16,18 @@ export function makeAvatar(T,kind='edo',shirt='#758aa7'){
  for(let i=0;i<7;i++){const a=-1.35+i*.45;const lock=sphere(head,kind==='marghe'?.19:.17,hair,Math.sin(a)*.42,.35+Math.cos(a)*.075,.29,.86,1.1,.85);lock.rotation.z=Math.sin(i*2)*.25}
  if(kind==='marghe')for(let side of [-1,1]){sphere(head,.23,hair,side*.43,-.29,-.08,.75,1.7,.87);sphere(head,.16,highlight,side*.43,-.52,.02,.73,1.65,.72);sphere(head,.12,highlight,side*.36,-.66,.08,.72,1.2,.8)}
  else {for(let i=0;i<4;i++)sphere(head,.15,hair,-.35+i*.23,.55,-.02,1,.85,.9);sphere(head,.32,hair,0,-.32,.19,1.1,.54,.85);sphere(head,.27,skin,0,-.19,.34,1,.72,.7)}
- // Giant glossy eyes, soft highlights and tiny blush cheeks.
- for(let side of [-1,1]){sphere(head,.102,white,side*.215,-.015,.452,.94,.78,.32);sphere(head,.060,dark,side*.215,-.021,.490,.9,.94,.40);sphere(head,.018,white,side*.197,.008,.515);sphere(head,.085,rose,side*.36,-.18,.39,1,.47,.18);sphere(head,.068,hair,side*.22,.135,.446,1.22,.19,.22)}
- sphere(head,.07,skin,0,-.16,.50,.72,.65,.65);sphere(head,.062,rose,0,-.27,.48,1.3,.23,.45);
+ // Sweet inset eyes: dark almond-shaped pupils, tiny glints, subtle blush.
+ for(const side of [-1,1]){
+  sphere(head,.077,material('#584444'),side*.215,-.025,.452,1,.72,.23);
+  sphere(head,.018,white,side*.195,.001,.471,.75,.75,.35);
+  sphere(head,.09,rose,side*.35,-.17,.373,1,.32,.14);
+  const brow=sphere(head,.075,hair,side*.215,.128,.436,1.25,.12,.14);
+  brow.rotation.z=side*.12;
+ }
+ sphere(head,.052,skin,0,-.16,.475,.75,.65,.55);
+ // Curved smile made of a thin arc, rather than protruding lips.
+ const smile=new T.Mesh(new T.TorusGeometry(.073,.010,5,18,Math.PI),material('#a35e61'));
+ smile.position.set(0,-.218,.477);smile.rotation.z=Math.PI;head.add(smile);
  if(kind==='edo'){
   const frame=material('#27242a',.45),lens=new T.MeshStandardMaterial({color:'#d7ecf7',transparent:true,opacity:.12,roughness:.1,depthWrite:false});
   for(let side of [-1,1]){shape(head,new T.TorusGeometry(.126,.014,7,26),frame,side*.216,-.009,.508,1.08,.86,1);shape(head,new T.CircleGeometry(.107,24),lens,side*.216,-.009,.505);shape(head,new T.BoxGeometry(.18,.025,.027),frame,side*.42,.055,.40)}
