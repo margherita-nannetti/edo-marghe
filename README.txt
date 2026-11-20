@@ -1,0 +1,1 @@
+Edo & Marghe V11 — Chibi Cozy. Due cavalli distinti (grigio e baio) a Molentargius; occhi degli avatar più piccoli e dolci; dettagli aggiunti a saline, Bled, spiagge e casa. Pubblicare tutti i file nella radice Netlify. Test su Safari iPhone necessario.
