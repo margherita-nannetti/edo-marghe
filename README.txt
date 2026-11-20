@@ -8,3 +8,5 @@ Pubblicazione: carica tutti i file della radice di questo pacchetto nella radice
 del repository GitHub Pages, sostituendo quelli omonimi. Non serve alcuna build.
 Se il browser mostra una versione precedente, aggiorna forzatamente la pagina o
 svuota la cache del sito: avventure.js usa già il parametro di versione v=6.
+
+Aggiornamento: capelli di Marghe biondo miele/dorato in tutti i capitoli (avatar condiviso e avventure). Franci mantiene il proprio colore di capelli.

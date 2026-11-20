@@ -775,7 +775,7 @@ Buon anniversario, amore mio. Ti amo.
     setPalette(chapter.theme);
     commonLandDecor(chapter.theme);
     edo=person('edo',-4,2.2,'#6b8ba5','#3c2c27');
-    marghe=person('marghe',1.6,.1,'#bd7e9a','#6a3d31');
+    marghe=person('marghe',1.6,.1,'#bd7e9a','#e6b653');
     avatarLast.copy(edo.position);
     title.textContent=chapter.icon+' '+chapter.title;
     subtitle.textContent='Livello '+(current+3)+' di '+(chapters.length+2)+' · '+chapter.place;

@@ -3,7 +3,7 @@ export function makeAvatar(T,kind='edo',shirt='#758aa7',hairColor=null){
  const root=new T.Group();const rig=new T.Group();root.add(rig);
  const material=(c,roughness=.78)=>new T.MeshStandardMaterial({color:c,roughness});
  const isMarghe=kind==='marghe',isEdo=kind==='edo';
- const skin=material(isEdo?'#eab995':'#f1c8a7'),cloth=material(shirt||'#758aa7'),jeans=material('#627b98'),hair=material(hairColor||(isMarghe?'#dca75d':'#392922')),highlight=material(isMarghe?'#f4c879':(hairColor||'#5a4036')),dark=material('#332a2e'),white=material('#fff9ef'),rose=material('#d87f82'),shoe=material('#e9d7c4');
+ const skin=material(isEdo?'#eab995':'#f1c8a7'),cloth=material(shirt||'#758aa7'),jeans=material('#627b98'),hair=material(hairColor||(isMarghe?'#e6b653':'#392922')),highlight=material(isMarghe?'#ffe09a':(hairColor||'#5a4036')),dark=material('#332a2e'),white=material('#fff9ef'),rose=material('#d87f82'),shoe=material('#e9d7c4');
  function shape(parent,geo,mat,x,y,z,sx=1,sy=1,sz=1){const o=new T.Mesh(geo,mat);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  const sphere=(p,r,m,x,y,z,sx=1,sy=1,sz=1)=>shape(p,new T.SphereGeometry(r,18,14),m,x,y,z,sx,sy,sz);
  const capsule=(p,r,h,m,x,y,z)=>shape(p,new T.CapsuleGeometry(r,h,4,10),m,x,y,z);
